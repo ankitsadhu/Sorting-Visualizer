@@ -13,9 +13,9 @@ function setup() {
 createCanvas(windowWidth*0.5, windowHeight*0.9);
 //console.log('new value'+ range);
 console.log(windowWidth);
-m = 72;
+m = 72; // arrays.length -1
 w = floor(windowWidth/(m*4));
-y = 2*w;
+y = 2*w; // next line will lender at 2*width of the line
 
 //slider Values
 var rangeslider = document.getElementById("myRange"); 
@@ -28,7 +28,7 @@ var output = rangeslider.value;
   y = 2*w;
         }
  setTimeout(()=>{
-  console.log('this is m ' + m);
+  console.log('No of element in an array  ' + m);
   console.log('this is width ' + w);
   console.log('this is y ' + y);
 },5000);
@@ -104,7 +104,7 @@ async function partition(arr, start, end) {
 }
 
 function draw() {
-  background(255);
+  background(255); //-> white color set as background
 
   for (let i = 0; i < values.length; i++) {
     noStroke();
@@ -116,7 +116,7 @@ function draw() {
       fill('#0091c9');
     }
     rect(i * y,0, w, values[i],0,0,6,6);
-    if(values.length < 15){
+    if(values.length < 15){ // write array values if array size < 15 on its body
     fill(255);
     noStroke();
     textAlign(CENTER);
@@ -129,7 +129,7 @@ function draw() {
 
 function generate(m){
   values = new Array(floor(m));
-  console.log(values.length);
+  console.log(`Generating... \n an array of Size: ${values.length}`);
   for (let i = 0; i < values.length; i++) {
     values[i] = random(height);
     states[i] = -1;
